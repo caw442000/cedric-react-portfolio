@@ -1,12 +1,22 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Sidebar from "./components/sidebar.js";
+import Projects from "./components/projects";
+import About from "./components/about";
 
 const App = () => {
   return (
     <div className="App">
-      New Site
+      <div className="App-Sidebar">
+        <Sidebar />
+      </div>
+
+      <div className="App-Main">
+        <Projects />
+        <About />
+      </div>
     </div>
   );
-}
+};
 
 export default App;

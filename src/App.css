@@ -1,7 +1,81 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  max-width: 100%; }
+
+html {
+  font-size: 62.5%; }
+
+  h1 {
+    font-size: 3rem; }
+
+    
+
+    p {
+      font-size: 1.4rem;
+    }
 .App {
   text-align: center;
+  display: flex;
+  justify-content: space-around;
+  width: 1000px;
 }
 
+.App-Main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 100%;
+  width: 600px;
+}
+
+.App-Sidebar {
+  width: 300px;
+  border-right: 1px solid black;
+}
+
+.Sidebar {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10rem;
+}
+
+.Sidebar nav {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4rem;
+}
+
+.Sidebar h1 {
+  margin: 1rem 0;
+}
+.Sidebar nav nav-item {
+  padding: 1rem 0;
+  font-size: 1.7rem;
+}
+
+
+
+
+.Profile-Image-Wrap {
+  padding: 20px;
+  max-width: 100%;
+  height: auto;
+  object-fit: scale-down;
+  
+
+  
+}
+
+.Profile-Image{
+
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
