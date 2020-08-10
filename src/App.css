@@ -29,17 +29,19 @@ html {
   justify-content: space-between;
   max-width: 100%;
   width: 600px;
+  border-left: 1px solid black;
 }
 
 .App-Sidebar {
   width: 300px;
-  border-right: 1px solid black;
+  
 }
 
 .Sidebar {
   display: flex;
   flex-direction: column;
   margin-top: 10rem;
+  max-width: 300px;
 }
 
 .Sidebar nav {
@@ -56,6 +58,9 @@ html {
   font-size: 1.7rem;
 }
 
+.sidebar-subitem-text {
+  font-size: 2.8rem;
+}
 
 
 
