@@ -18,7 +18,8 @@ import cedric from "../assets/images/cedric.png";
 //   );
 // };
 
-import React from "react";
+import React, { useRef, createRef } from "react";
+import { Link, animateScroll as scroll } from "react-scroll";
 import PropTypes from "prop-types";
 import AppBar from "@material-ui/core/AppBar";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -37,56 +38,108 @@ import MenuIcon from "@material-ui/icons/Menu";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
+import Projects from "./Projects";
+import About from "./About";
+import { Route, MemoryRouter, useHistory } from "react-router";
+import { Link as RouterLink } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+// import Link from "@material-ui/core/Link";
+import { render } from "react-dom";
+import Button from "@material-ui/core/Button";
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
+import { MenuList } from "@material-ui/core";
 
 const drawerWidth = 300;
 
+
+
 const useStyles = makeStyles((theme) => ({
   root: {
+
+    // styles insure the font on typography
+    "& .MuiTouchRipple-root": {
+     
+        fontWeight: "600",
+        fontFamily: "Inter, sans-serif",
+ 
+    },
+  
     display: "flex",
+    backgroundColor:'white',
+    textAlign: 'center'
+
+
+    
   },
-  listItemText:{
-    fontSize:'2.4rem',//Insert your required size
+  listItemText: {
+    width: "100%",
+    fontSize: "2.4rem", //Insert your required size
+    textAlign: "justify",
+    padding: '1rem',
+    paddingLeft:'3rem'
   },
+  // listItemText: .active {
+  //   fontSize: "2.4rem", //Insert your required size
+  //   textAlign: "center",
+  // },
   drawer: {
     [theme.breakpoints.up("sm")]: {
       width: drawerWidth,
       flexShrink: 0,
     },
   },
+
   appBar: {
+    
     [theme.breakpoints.up("sm")]: {
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
+      textAlign: 'center',
+      backgroundColor:'white',
+
     },
-  },
+    backgroundColor:'white'
+
+},
+
+
   menuButton: {
     marginRight: theme.spacing(2),
     [theme.breakpoints.up("sm")]: {
       display: "none",
+      backgroundColor: 'red'
     },
   },
   // necessary for content to be below app bar
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
     width: drawerWidth,
+    
+    
   },
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
+    
   },
-
-
+  getWide: {
+    width: `800px`,
+    color: 'black',
+    
+  },
 }));
 
-const styles = theme => ({
 
-});
 
 const Sidebar = (props) => {
   const { window } = props;
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const history = useHistory();
+
+
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -96,25 +149,46 @@ const Sidebar = (props) => {
     <div>
       <div className={classes.toolbar} />
       <div className="Profile-Image-Wrap">
-        <img
-          className="Profile-Image"
-          src={cedric}
-          alt="Cedric Profile Picture"
-        />
+        <img className="Profile-Image" src={cedric} alt="Cedric" />
       </div>
-      <h1>Cedric Winbush Jr</h1>
+      <h1 style={{textAlign: "center", paddingBottom:'15px'}}>Cedric Winbush Jr</h1>
+      <p style={{textAlign: "center", paddingBottom:'15px'}}>
+        <EmailIcon />
+        cawinbushjr@gmail.com
+      </p>
       <Divider />
-      <List>
-        {["Introduction", "About", "Timeline"].map((text, index) => (
-          <ListItem className={classes.navLinkBar} alignItems = 'center' button key={text}>
-            {/* <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <EmailIcon />}
-            </ListItemIcon> */}
-            <ListItemText classes={{primary:classes.listItemText}}primary={text}/>
+      <MenuList style={{textAlign: "center", paddingBottom:'15px'}}>
+
+        <MenuItem
+          component={Link}
+          activeClass="active"
+          to="introduction"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+          className={classes.listItemText}
+          primary="Introduction"
+        
+        >
+          <Typography className={classes.listItemText}>About</Typography>
           
-          </ListItem>
-        ))}
-      </List>
+        </MenuItem>
+        <MenuItem
+          component={Link}
+          activeClass="active"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+          to="projects"
+          className={classes.listItemText}
+          primary="Projects"
+        >
+          <Typography className={classes.listItemText}>Projects</Typography>
+        </MenuItem>
+      </MenuList>
+
     </div>
   );
 
@@ -124,7 +198,7 @@ const Sidebar = (props) => {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="fixed" className={classes.appBar}>
+      <AppBar style={{boxShadow: "none"}} position="fixed" className={classes.appBar}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -132,12 +206,13 @@ const Sidebar = (props) => {
             edge="start"
             onClick={handleDrawerToggle}
             className={classes.menuButton}
+            style={{color: "black"}}
           >
             <MenuIcon />
           </IconButton>
-          {/* <Typography variant="h2" noWrap>
-            Cedric Winbush Jr Portfolio
-          </Typography> */}
+          <Typography className = { classes.getWide} variant="h3" color = 'initial' noWrap align='justify' display= 'inline'>
+            Allow Me To Introduce Myself
+          </Typography>
         </Toolbar>
       </AppBar>
       <nav className={classes.drawer} aria-label="mailbox folders">
@@ -171,42 +246,18 @@ const Sidebar = (props) => {
           </Drawer>
         </Hidden>
       </nav>
-      {/* <main className={classes.content}>
-        <div className={classes.toolbar} />
-        <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
-          facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit
-          gravida rutrum quisque non tellus. Convallis convallis tellus id interdum velit laoreet id
-          donec ultrices. Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-          adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra nibh cras.
-          Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo quis
-          imperdiet massa tincidunt. Cras tincidunt lobortis feugiat vivamus at augue. At augue eget
-          arcu dictum varius duis at consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem
-          donec massa sapien faucibus et molestie ac.
-        </Typography>
-        <Typography paragraph>
-          Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
-          facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac
-          tincidunt. Ornare suspendisse sed nisi lacus sed viverra tellus. Purus sit amet volutpat
-          consequat mauris. Elementum eu facilisis sed odio morbi. Euismod lacinia at quis risus sed
-          vulputate odio. Morbi tincidunt ornare massa eget egestas purus viverra accumsan in. In
-          hendrerit gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem et
-          tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique sollicitudin
-          nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas
-          accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography>
-      </main> */}
-    </div>
-  );
-};
 
-Sidebar.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window: PropTypes.func,
+      <main className={classes.content}>
+        <div className={classes.toolbar} />
+          <About />
+   
+       
+          <Projects />
+       
+      </main>
+    </div>
+    // </MemoryRouter>
+  );
 };
 
 export default Sidebar;
