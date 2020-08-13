@@ -1,5 +1,6 @@
 import React, { createRef } from "react";
 import "./App.css";
+import Sidebar from './components/sidebar'
 import { Route, MemoryRouter, useHistory } from "react-router";
 import { Link as RouterLink } from "react-router-dom";
 import Projects from './components/Projects';
@@ -14,8 +15,8 @@ const App = () => {
   return (
     <div className="Container">
       {/* <div className="App-Sidebar"> */}
-      {/* <Sidebar/> */}
-      <Projects />
+      <Sidebar/>
+      
       {/* </div> */}
 
       {/* <div className="App-Main">
