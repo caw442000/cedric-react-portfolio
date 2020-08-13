@@ -1,6 +1,6 @@
 import React, { createRef } from "react";
 import "./App.css";
-import Sidebar from "./components/Sidebar.js";
+import Sidebar from "./components/Sidebar"
 import Projects from "./components/Projects";
 import About from "./components/About";
 import { Route, MemoryRouter, useHistory } from "react-router";
