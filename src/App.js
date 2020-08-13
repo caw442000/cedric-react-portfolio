@@ -14,7 +14,11 @@ const LinkBehavior = React.forwardRef((props, ref) => (
 const App = () => {
 
   return (
-    <div className="Container">
+    <div className="App">
+      <div className="Container">
+
+
+
       {/* <div className="App-Sidebar"> */}
       
       <SideNav />
@@ -27,18 +31,19 @@ const App = () => {
 
       {/* <Link component={LinkBehavior} >
           Projects
-
-
-          </Link> */}
+          
+          
+        </Link> */}
 
 {/* <Route path="/introduction">
         <About />
-      </Route>
-      <Route path="/projects">
+        </Route>
+        <Route path="/projects">
         <Projects />
       </Route> */}
 
   
+      </div>
     </div>
   );
 };

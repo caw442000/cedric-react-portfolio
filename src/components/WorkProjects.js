@@ -11,15 +11,48 @@ const projectList = [{
   id: 2, 
   title: "Test Title",
   image: cedric
-}]
+},
+{
+  id: 3, 
+  title: "Test Title",
+  image: cedric
+}, 
+{
+  id: 4, 
+  title: "Test Title",
+  image: cedric
+},
+{
+  id: 5, 
+  title: "Test Title",
+  image: cedric
+}, 
+{
+  id: 6, 
+  title: "Test Title",
+  image: cedric
+},
+{
+  id: 7, 
+  title: "Test Title",
+  image: cedric
+}, 
+
+]
 
 const WorkProjects = (props) => {
   return (
-    <div className="extra" >
-      <h1 id="projects">Projects</h1>
+    
+    <div id="projects" className="Extra" >
+      <h1 >Projects</h1>
+      <div className = "CardList">
+
       {projectList.map(data => (
         <ProjectCard key = {data.id} data = {data}/>
       ))}
+
+      </div>
+      
     </div>
   );
 };

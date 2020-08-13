@@ -13,6 +13,7 @@
 html {
   font-size: 62.5%;
   background-color: white;
+  height: 1500px;
 }
 
 h1 {
@@ -27,15 +28,59 @@ p {
   text-align: center;
   color: red
 }
-.Container {
+.Container.Main {
   text-align: center;
   display: flex;
   justify-content: space-around;
-  width: 1000px;
+  width: 500px;
   background-color: white;
 }
 
 
+.Extra {
+  background-color: royalblue;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.Introduction {
+  background-color: red;
+  padding-bottom: 500px;
+  
+}
+
+
+.Card {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  align-items: center;
+  max-width: 100%;
+  flex-direction: column;
+  width:150px; 
+  padding: 10px;
+}
+.CardList {
+  display:flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+  align-items: center;
+  max-width: 100%;
+  flex-wrap: wrap;
+
+}
+.CardImage {
+  width: 150px;
+height: 150x;
+object-fit: contain;
+flex-shrink:2;  
+}
+.App {
+  width: 1000px
+}
 
 .App-Main {
   display: flex;

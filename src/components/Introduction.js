@@ -3,7 +3,7 @@ import { checkPropTypes } from "prop-types";
 
 const Introduction = (props) => {
   return (
-    <div id = "introduction">
+    <div className='Introduction' id = "introduction">
       <p>About</p>
     </div>
   );

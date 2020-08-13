@@ -27,8 +27,8 @@ import React from "react";
 const ProjectCard = ({ data }) => {
   const { projectImg } = data.image
   return (
-    <div>
-      <img className = "" src={data.image} alt="" />
+    <div className = "Card">
+      <img  className = "CardImage" src={data.image} alt="" />
       <h2>{data.title}</h2>
       
     </div>
