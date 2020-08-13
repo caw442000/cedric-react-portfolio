@@ -1,9 +1,10 @@
 import React, { createRef } from "react";
 import "./App.css";
-import Sidebar from './components/sidebar'
+
 import { Route, MemoryRouter, useHistory } from "react-router";
 import { Link as RouterLink } from "react-router-dom";
-import Projects from './components/Projects';
+import SideNav from "./components/SideNav";
+
 
 
 const LinkBehavior = React.forwardRef((props, ref) => (
@@ -15,8 +16,8 @@ const App = () => {
   return (
     <div className="Container">
       {/* <div className="App-Sidebar"> */}
-      <Sidebar/>
       
+      <SideNav />
       {/* </div> */}
 
       {/* <div className="App-Main">
