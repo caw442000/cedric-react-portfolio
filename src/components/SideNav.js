@@ -89,7 +89,7 @@ const useStyles = makeStyles((theme) => ({
       flexShrink: 0,
     },
   },
-
+  
   appBar: {
     
     [theme.breakpoints.up("sm")]: {
@@ -118,7 +118,7 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     flexGrow: 1,
-    padding: theme.spacing(3),
+    // padding: theme.spacing(3),
     
   },
   getWide: {

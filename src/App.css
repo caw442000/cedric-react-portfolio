@@ -96,6 +96,8 @@ flex-shrink:2;
   width: 300px;
 }
 
+
+
 .Sidebar {
   display: flex;
   flex-direction: column;
