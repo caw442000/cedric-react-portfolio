@@ -5,8 +5,14 @@
   max-width: 100%;
 }
 
+#root {
+  background-color: white;
+
+}
+
 html {
   font-size: 62.5%;
+  background-color: white;
 }
 
 h1 {
