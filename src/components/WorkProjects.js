@@ -1,6 +1,8 @@
 import React from "react";
 import ProjectCard from "./ProjectCard.js"
 import cedric from "../assets/images/cedric.png";
+import Particles from 'react-particles-js';
+
 
 const projectList = [{
   id: 1, 
@@ -40,11 +42,28 @@ const projectList = [{
 
 ]
 
+
+
 const WorkProjects = (props) => {
+
+  const particlesOptions = {
+    particles: {
+      number: {
+        value: 80,
+        density: {
+          enable: true,
+          value_area: 800
+        }
+      }
+    }
+  };
+
   return (
     
     <div id="projects" className="Extra" >
-      <h1 >Projects</h1>
+      <h1 style={{textAlign:'left'}} >Projects</h1>
+  
+
       <div className = "CardList">
 
       {projectList.map(data => (
@@ -52,6 +71,7 @@ const WorkProjects = (props) => {
       ))}
 
       </div>
+ 
       
     </div>
   );

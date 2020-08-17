@@ -61,24 +61,32 @@ const useStyles = makeStyles((theme) => ({
     "& .MuiTouchRipple-root": {
      
         fontWeight: "600",
-        fontFamily: 'Press Start 2P, cursive'
+        fontFamily: 'Nunito Sans, sans-serif',
  
     },
     " & .MuiTypography-root": {
 
-      fontFamily: 'Sanchez, serif',
-      color: 'red'
+      fontFamily: 'Nunito Sans, sans-serif',
+ 
+      color: 'black'
     },
     display: "flex",
-    backgroundColor:'yellow',
+    backgroundColor:'black',
     textAlign: 'center',
-    fontFamily: 'Sanchez, serif',
+    fontFamily: 'Nunito Sans, sans-serif',
 
 
 
     
   },
   listItemText: {
+    width: "100%",
+    fontSize: "3.4rem", //Insert your required size
+    textAlign: "justify",
+    padding: '1rem',
+    paddingLeft:'3rem',
+  },
+  listMainText: {
     width: "100%",
     fontSize: "3.4rem", //Insert your required size
     textAlign: "justify",
@@ -156,7 +164,7 @@ const SideNav = (props) => {
       <div className="Profile-Image-Wrap">
         <img className="Profile-Image" src={cedric} alt="Cedric" />
       </div>
-      <h1 style={{textAlign: "center", paddingBottom:'15px'}}>Cedric Winbush Jr</h1>
+      <h2 style={{textAlign: "center", paddingBottom:'15px'}}>Cedric Winbush Jr</h2>
       <p style={{textAlign: "center", paddingBottom:'15px'}}>
         <EmailIcon />
         cawinbushjr@gmail.com
