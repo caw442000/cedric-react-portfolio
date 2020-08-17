@@ -7,6 +7,7 @@ import SideNav from "./components/SideNav";
 
 
 
+
 const LinkBehavior = React.forwardRef((props, ref) => (
   <RouterLink ref={ref} to="/projects" {...props} />
 ));
@@ -16,7 +17,7 @@ const App = () => {
   return (
     <div className="App">
       <div className="Container">
-        
+   
 
 
 
