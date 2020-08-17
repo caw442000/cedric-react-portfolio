@@ -61,23 +61,29 @@ const useStyles = makeStyles((theme) => ({
     "& .MuiTouchRipple-root": {
      
         fontWeight: "600",
-        fontFamily: "Inter, sans-serif",
+        fontFamily: 'Press Start 2P, cursive'
  
     },
-  
+    " & .MuiTypography-root": {
+
+      fontFamily: 'Sanchez, serif',
+      color: 'red'
+    },
     display: "flex",
-    backgroundColor:'white',
-    textAlign: 'center'
+    backgroundColor:'yellow',
+    textAlign: 'center',
+    fontFamily: 'Sanchez, serif',
+
 
 
     
   },
   listItemText: {
     width: "100%",
-    fontSize: "2.4rem", //Insert your required size
+    fontSize: "3.4rem", //Insert your required size
     textAlign: "justify",
     padding: '1rem',
-    paddingLeft:'3rem'
+    paddingLeft:'3rem',
   },
   // listItemText: .active {
   //   fontSize: "2.4rem", //Insert your required size
@@ -119,12 +125,13 @@ const useStyles = makeStyles((theme) => ({
   content: {
     flexGrow: 1,
     // padding: theme.spacing(3),
+   
     
   },
   getWide: {
     width: `800px`,
     color: 'black',
-    
+  
   },
 }));
 

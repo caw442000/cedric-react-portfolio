@@ -4,7 +4,7 @@ import { checkPropTypes } from "prop-types";
 const Introduction = (props) => {
   return (
     <div className='Introduction' id = "introduction">
-      <p>About</p>
+      <h1>About</h1>
     </div>
   );
 };
