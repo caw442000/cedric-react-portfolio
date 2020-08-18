@@ -1,12 +1,12 @@
 import React, { createRef } from "react";
 import "./App.css";
-import Sidebar from "./components/Sidebar"
-import Projects from "./components/Projects";
-import About from "./components/About";
+
 import { Route, MemoryRouter, useHistory } from "react-router";
 import { Link as RouterLink } from "react-router-dom";
-import { useLocation } from "react-router-dom";
-import Link from "@material-ui/core/Link";
+import SideNav from "./components/SideNav";
+
+
+
 
 const LinkBehavior = React.forwardRef((props, ref) => (
   <RouterLink ref={ref} to="/projects" {...props} />
@@ -15,9 +15,15 @@ const LinkBehavior = React.forwardRef((props, ref) => (
 const App = () => {
 
   return (
-    <div className="Container">
+    <div className="App">
+      <div className="Container">
+   
+
+
+
       {/* <div className="App-Sidebar"> */}
-      <Sidebar />
+      
+      <SideNav />
       {/* </div> */}
 
       {/* <div className="App-Main">
@@ -27,18 +33,19 @@ const App = () => {
 
       {/* <Link component={LinkBehavior} >
           Projects
-
-
-          </Link> */}
+          
+          
+        </Link> */}
 
 {/* <Route path="/introduction">
         <About />
-      </Route>
-      <Route path="/projects">
+        </Route>
+        <Route path="/projects">
         <Projects />
       </Route> */}
 
   
+      </div>
     </div>
   );
 };

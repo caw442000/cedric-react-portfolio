@@ -1,4 +1,6 @@
 import cedric from "../assets/images/cedric.png";
+import Introduction from './Introduction';
+import WorkProjects from './WorkProjects'
 
 // const Sidebar = (props) => {
 //   return (
@@ -38,8 +40,6 @@ import MenuIcon from "@material-ui/icons/Menu";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import Projects from "./Projects";
-import About from "./About";
 import { Route, MemoryRouter, useHistory } from "react-router";
 import { Link as RouterLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
@@ -61,23 +61,37 @@ const useStyles = makeStyles((theme) => ({
     "& .MuiTouchRipple-root": {
      
         fontWeight: "600",
-        fontFamily: "Inter, sans-serif",
+        fontFamily: 'Nunito Sans, sans-serif',
  
     },
-  
+    " & .MuiTypography-root": {
+
+      fontFamily: 'Nunito Sans, sans-serif',
+ 
+      color: 'black'
+    },
     display: "flex",
-    backgroundColor:'white',
-    textAlign: 'center'
+    backgroundColor:'black',
+    textAlign: 'center',
+    fontFamily: 'Nunito Sans, sans-serif',
+
 
 
     
   },
   listItemText: {
     width: "100%",
-    fontSize: "2.4rem", //Insert your required size
+    fontSize: "3.4rem", //Insert your required size
     textAlign: "justify",
     padding: '1rem',
-    paddingLeft:'3rem'
+    paddingLeft:'3rem',
+  },
+  listMainText: {
+    width: "100%",
+    fontSize: "3.4rem", //Insert your required size
+    textAlign: "justify",
+    padding: '1rem',
+    paddingLeft:'3rem',
   },
   // listItemText: .active {
   //   fontSize: "2.4rem", //Insert your required size
@@ -89,7 +103,7 @@ const useStyles = makeStyles((theme) => ({
       flexShrink: 0,
     },
   },
-
+  
   appBar: {
     
     [theme.breakpoints.up("sm")]: {
@@ -118,19 +132,20 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     flexGrow: 1,
-    padding: theme.spacing(3),
+    // padding: theme.spacing(3),
+   
     
   },
   getWide: {
     width: `800px`,
     color: 'black',
-    
+  
   },
 }));
 
 
 
-const Sidebar = (props) => {
+const SideNav = (props) => {
   const { window } = props;
   const classes = useStyles();
   const theme = useTheme();
@@ -149,7 +164,7 @@ const Sidebar = (props) => {
       <div className="Profile-Image-Wrap">
         <img className="Profile-Image" src={cedric} alt="Cedric" />
       </div>
-      <h1 style={{textAlign: "center", paddingBottom:'15px'}}>Cedric Winbush Jr</h1>
+      <h2 style={{textAlign: "center", paddingBottom:'15px'}}>Cedric Winbush Jr</h2>
       <p style={{textAlign: "center", paddingBottom:'15px'}}>
         <EmailIcon />
         cawinbushjr@gmail.com
@@ -247,10 +262,10 @@ const Sidebar = (props) => {
 
       <main className={classes.content}>
         <div className={classes.toolbar} />
-          <About />
+          <Introduction />
    
        
-          <Projects />
+          <WorkProjects />
        
       </main>
     </div>
@@ -258,4 +273,4 @@ const Sidebar = (props) => {
   );
 };
 
-export default Sidebar;
+export default SideNav;

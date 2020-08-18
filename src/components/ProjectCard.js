@@ -1,4 +1,8 @@
 import React from "react";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import Icon from '@material-ui/core/Icon';
+import Link from "@material-ui/core/Link";
+import HttpIcon from "@material-ui/icons/Http";
 // import styled from "styled-components";
 
 // const DrinkDiv = styled.div`
@@ -20,17 +24,29 @@ import React from "react";
 // width: 150px;
 // height: 150px
 // object-fit: scale;
-// flex-shrink:2;    
+// flex-shrink:2;
 
 // `;
 
 const ProjectCard = ({ data }) => {
-  const { projectImg } = data.image
+  const { projectImg } = data.image;
   return (
-    <div>
-      <img className = "" src={data.image} alt="" />
-      <h2>{data.title}</h2>
-      
+    <div className="Card">
+      <h2 className="CardTitle">{data.title}</h2>
+
+      <div className="CardContent">
+        <img className="CardImage" src={data.image} alt="" />
+        <p className="CardText">{data.text}</p>
+      </div>
+      <div className="icons">
+      <Link
+                  href={data.github}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+        <GitHubIcon style = {{ fontSize: 40}}/>
+        </Link>
+      </div>
     </div>
   );
 };
