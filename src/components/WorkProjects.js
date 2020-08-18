@@ -48,9 +48,9 @@ const WorkProjects = (props) => {
       <Typography variant="h1" style={{ textAlign: "left", color: "white" }}>
         Projects
       </Typography>
-      <Grid container spacing={4}>
+      <Grid container spacing={4} style={{padding: '20px'}}>
         {projectList.map((data) => (
-          <Grid item>
+          <Grid item >
             <ProjectCard key={data.id} data={data} />
           </Grid>
         ))}
