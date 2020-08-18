@@ -1,12 +1,13 @@
 import React from "react";
 import Particles from "react-particles-js";
 import ParticlesBg from "particles-bg";
+import { Typography, Box, Grid } from "@material-ui/core";
 
 const Introduction = (props) => {
   return (
-    <div className="Introduction" id="introduction">
-      <div className="text">
-        <h1
+    <Box  id="introduction">
+      <Grid >
+        <Typography variant= 'h1'
           style={{
             textAlign: "left",
             color: "white",
@@ -18,11 +19,11 @@ const Introduction = (props) => {
           }}
         >
           About
-        </h1>
-        <h1 style={{ textAlign: "left", color: "white", marginTop: "5%" }}>
+        </Typography>
+        <Typography variant= 'h2' style={{ textAlign: "left", color: "white", marginTop: "5%" }}>
           Hi, I am Cedric Winbush I am a full stack web developer.
-        </h1>
-      </div>
+        </Typography>
+      </Grid>
       <Particles
         height={window.outerHeight}
         params={{
@@ -53,7 +54,7 @@ const Introduction = (props) => {
           },
         }}
       />
-    </div>
+    </Box>
   );
 };
 
