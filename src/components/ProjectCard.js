@@ -62,23 +62,7 @@ const ProjectCard = ({ data }) => {
     setExpanded(!expanded);
   };
   return (
-    // <div className="Card">
-    //   <h2 className="CardTitle">{data.title}</h2>
 
-    //   <div className="CardContent">
-    //     <img className="CardImage" src={data.image} alt="" />
-    //     <p className="CardText">{data.text}</p>
-    //   </div>
-    //   <div className="icons">
-    //   <Link
-    //               href={data.github}
-    //               target="_blank"
-    //               rel="noreferrer"
-    //             >
-    //     <GitHubIcon style = {{ fontSize: 40}}/>
-    //     </Link>
-    //   </div>
-    // </div>
 
     <Card className={classes.root} variant = 'outlined'>
       <CardHeader
