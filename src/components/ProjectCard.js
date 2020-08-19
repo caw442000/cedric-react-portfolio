@@ -23,7 +23,8 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
-    height: 425,
+    // minWidth: 345,
+    // height: 425,
     fontFamily: 'Nunito Sans, sans-serif',
     
     // " & .MuiTypography-root": {
@@ -62,32 +63,16 @@ const ProjectCard = ({ data }) => {
     setExpanded(!expanded);
   };
   return (
-    // <div className="Card">
-    //   <h2 className="CardTitle">{data.title}</h2>
 
-    //   <div className="CardContent">
-    //     <img className="CardImage" src={data.image} alt="" />
-    //     <p className="CardText">{data.text}</p>
-    //   </div>
-    //   <div className="icons">
-    //   <Link
-    //               href={data.github}
-    //               target="_blank"
-    //               rel="noreferrer"
-    //             >
-    //     <GitHubIcon style = {{ fontSize: 40}}/>
-    //     </Link>
-    //   </div>
-    // </div>
 
-    <Card className={classes.root} variant = 'outlined'>
+    <Card className={classes.root} >
       <CardHeader
         titleTypographyProps = {{variant: 'h4'}}
         
 
         avatar={
           <Avatar aria-label="recipe" className={classes.avatar}>
-            S
+            {data.avatar}
           </Avatar>
         }
         action={
@@ -96,14 +81,16 @@ const ProjectCard = ({ data }) => {
           </IconButton>
         }
         title={data.title}
-        subheader="September 14, 2016"
+        subheader={data.stack}
       />
       <CardMedia
         className={classes.media}
         image={data.image}
         title={data.title}
       />
-      <CardContent>
+      <CardContent 
+        // style = {{ height: 120 }}
+        >
         <Typography variant="body1" color="textSecondary" component="p">
           {data.text}
         </Typography>

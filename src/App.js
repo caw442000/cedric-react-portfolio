@@ -17,33 +17,11 @@ const App = () => {
   return (
     <div className="App">
       <div className="Container">
-   
 
 
-
-      {/* <div className="App-Sidebar"> */}
       
       <SideNav />
-      {/* </div> */}
-
-      {/* <div className="App-Main">
-        <Projects />
-        <About />
-      </div> */}
-
-      {/* <Link component={LinkBehavior} >
-          Projects
-          
-          
-        </Link> */}
-
-{/* <Route path="/introduction">
-        <About />
-        </Route>
-        <Route path="/projects">
-        <Projects />
-      </Route> */}
-
+  
   
       </div>
     </div>
