@@ -23,6 +23,7 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
+    // minWidth: 345,
     // height: 425,
     fontFamily: 'Nunito Sans, sans-serif',
     

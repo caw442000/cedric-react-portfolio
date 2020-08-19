@@ -56,7 +56,7 @@ const WorkProjects = (props) => {
       <Typography variant="h1" style={{ textAlign: "left", color: "white" }}>
         Projects
       </Typography>
-      <Grid container spacing={4} style={{margin: '0 auto'}}>
+      <Grid container spacing={4} style={{margin: '0 auto', width: '1000px'}}>
         {projectList.map((data) => (
           <Grid item >
             <ProjectCard key={data.id} data={data} />
