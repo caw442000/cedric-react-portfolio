@@ -5,24 +5,30 @@ import { Typography, Box, Grid } from "@material-ui/core";
 
 const Introduction = (props) => {
   return (
-    <Box  id="introduction">
-      <Grid >
-        <Typography variant= 'h1'
-          style={{
-            textAlign: "left",
-            color: "white",
-            // position: "absolute",
-            // top: 0,
-            // left: 0,
-            // width: "100%",
-            // height: "100%"
-          }}
-        >
-          About
-        </Typography>
-        <Typography variant= 'h2' style={{ textAlign: "left", color: "white", marginTop: "5%" }}>
-          Hi, I am Cedric Winbush I am a full stack web developer.
-        </Typography>
+    <Box id="introduction">
+      <Grid container style={{ padding: 30 }}>
+        <Grid item>
+          <Typography
+            variant="h1"
+            style={{
+              textAlign: "left",
+              color: "white",
+              // position: "absolute",
+              // top: 0,
+              // left: 0,
+              // width: "100%",
+              // height: "100%"
+            }}
+          >
+            About
+          </Typography>
+          <Typography
+            variant="h2"
+            style={{ textAlign: "left", color: "white", marginTop: "5%" }}
+          >
+            Hi, I am Cedric Winbush I am a full stack web developer.
+          </Typography>
+        </Grid>
       </Grid>
       <Particles
         height={window.outerHeight}
