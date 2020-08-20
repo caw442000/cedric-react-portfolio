@@ -195,7 +195,6 @@ const SideNav = (props) => {
 
   return (
     <div className={classes.root}>
-      <CssBaseline />
       <AppBar style={{boxShadow: "none"}} position="fixed" className={classes.appBar}>
         <Toolbar>
           <IconButton
